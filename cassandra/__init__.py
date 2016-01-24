@@ -93,6 +93,16 @@ class ConsistencyLevel(object):
     one response.
     """
 
+    TRANSACTIONAL = 11
+    """
+    Transactional per DC
+    """
+
+    LOCAL_TRANSACTIONAL = 12
+    """
+    Transactional local only, like quourm for private memtables
+    """
+
 ConsistencyLevel.value_to_name = {
     ConsistencyLevel.ANY: 'ANY',
     ConsistencyLevel.ONE: 'ONE',
@@ -104,7 +114,9 @@ ConsistencyLevel.value_to_name = {
     ConsistencyLevel.EACH_QUORUM: 'EACH_QUORUM',
     ConsistencyLevel.SERIAL: 'SERIAL',
     ConsistencyLevel.LOCAL_SERIAL: 'LOCAL_SERIAL',
-    ConsistencyLevel.LOCAL_ONE: 'LOCAL_ONE'
+    ConsistencyLevel.LOCAL_ONE: 'LOCAL_ONE',
+    ConsistencyLevel.TRANSACTIONAL: 'TRANSACTIONAL',
+    ConsistencyLevel.LOCAL_TRANSACTIONAL: 'LOCAL_TRANSACTIONAL'
 }
 
 ConsistencyLevel.name_to_value = {
@@ -118,7 +130,9 @@ ConsistencyLevel.name_to_value = {
     'EACH_QUORUM': ConsistencyLevel.EACH_QUORUM,
     'SERIAL': ConsistencyLevel.SERIAL,
     'LOCAL_SERIAL': ConsistencyLevel.LOCAL_SERIAL,
-    'LOCAL_ONE': ConsistencyLevel.LOCAL_ONE
+    'LOCAL_ONE': ConsistencyLevel.LOCAL_ONE,
+    'TRANSACTIONAL': ConsistencyLevel.TRANSACTIONAL,
+    'LOCAL_TRANSACTIONAL': ConsistencyLevel.LOCAL_TRANSACTIONAL
 }
 
 
